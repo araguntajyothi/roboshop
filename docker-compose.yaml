@@ -38,7 +38,7 @@ services:
      - mongodb
      - redis
   cart:
-   image: araguntajyothi/cart:v1
+   image: araguntajyothi/cart:v2
    container_name: cart
    depends_on:
      - redis
