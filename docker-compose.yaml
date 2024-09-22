@@ -8,6 +8,9 @@ services:
    container_name: mongodb
   redis:
     image: redis
+  mysql:
+   image: mysql:v1
+   container_name: mysql
   catalogue:
     image: catalogue:v1
     container_name: catalogue
@@ -22,6 +25,7 @@ services:
       - catalogue
       - user
       - cart
+      - shipping
   user:
    image: user:v1
    container_name: user
@@ -34,3 +38,8 @@ services:
    depends_on:
      - redis
      - catalogue
+  shipping:
+   image: shipping:v1
+   container_name: shipping
+   depends_on:
+     - mysql
