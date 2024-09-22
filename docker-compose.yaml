@@ -30,6 +30,7 @@ services:
       - cart
       - shipping
       - payment
+      - rating
   user:
    image: user:v1
    container_name: user
@@ -52,3 +53,8 @@ services:
    container_name: payment
    depends_on:
      - rabbitmq
+  rating:
+   image: rating:v1
+   container_name: rating
+   depends_on:
+     - mysql
