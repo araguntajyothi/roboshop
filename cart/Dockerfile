@@ -4,7 +4,7 @@ EXPOSE 8080
 
 WORKDIR /opt/server
 
-RUN addgroup cart && adduser --system cart && -aG cart cart
+RUN addgroup cart && adduser --system cart && usermod -aG cart cart
 
 RUN chown -R cart:cart /opt/server
 
