@@ -31,14 +31,23 @@ services:
   mongodb:
    image: araguntajyothi/mongodb:v1
    container_name: mongodb
+   volumes:
+     - mongodb:/data/db
   redis:
     image: redis
+    container_name: redis
+    volumes:
+      - redis:/data
   mysql:
    image: araguntajyothi/mysql:v1
    container_name: mysql
+   volumes:
+     - mysql:/var/lib/mysql
   rabbitmq:
    image: rabbitmq
    container_name: rabbitmq
+   volumes:
+     - rabbitmq:/var/lib/rabbitmq
   catalogue:
     image: araguntajyothi/catalogue:v1
     container_name: catalogue
